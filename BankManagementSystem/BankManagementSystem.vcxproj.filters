@@ -21,10 +21,10 @@
     <ClInclude Include="BankManagementSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="sqlite\sqlite3.h">
+    <ClInclude Include="sqlite3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="sqlite\sqlite3ext.h">
+    <ClInclude Include="sqlite3ext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -38,10 +38,10 @@
     <ClCompile Include="BankManagementSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="sqlite\shell.c">
+    <ClCompile Include="shell.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="sqlite\sqlite3.c">
+    <ClCompile Include="sqlite3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

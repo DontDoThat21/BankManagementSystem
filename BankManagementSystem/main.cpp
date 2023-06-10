@@ -2,7 +2,7 @@
 #include <iostream>
 #include <Windows.h>
 #include <string>
-#include "sqlite/sqlite3.h"
+#include "sqlite3.h"
 
 using namespace std;
 using namespace winrt;
@@ -10,6 +10,10 @@ using namespace Windows::Foundation;
 
 int main()
 {
+    sqlite3* db;
+    sqlite3_stmt* stmt;
+    sqlite3_open("BMS.db", &db);
+
     char ch;
     //int num;
 
