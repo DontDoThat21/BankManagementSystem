@@ -3,16 +3,20 @@
 #include <Windows.h>
 #include <string>
 #include "sqlite3.h"
+#include "main.h"
+#include "BankManagementSystem.h"
 
 using namespace std;
 using namespace winrt;
 using namespace Windows::Foundation;
 
+sqlite3* _db;
+
 int main()
 {
-    sqlite3* db;
-    sqlite3_stmt* stmt;
-    sqlite3_open("BMS.db", &db);
+
+    InitializeDB();    
+    InitializeDBTables();
 
     char ch;
     //int num;
@@ -38,5 +42,27 @@ int main()
     cout << endl;
 
     cin >> ch;
+
+}
+
+void InitializeDB() {
+    sqlite3_stmt* stmt;
+    sqlite3_open("BMS.db", &_db);
+}
+
+void InitializeDBTables() {
+    char* err;
+    int result = sqlite3_exec(_db, "CREATE TABLE IF NOT EXISTS Bank_Account(id INT, name varchar(100), sex varchar(10), address varchar(100), tax varchar(100))", NULL, NULL, &err);
+    if (result != SQLITE_OK)
+    {
+        cout << "error: " << err;
+    }
+}
+
+void Create_Account() {
+
+}
+
+void Display_Account() {
 
 }
