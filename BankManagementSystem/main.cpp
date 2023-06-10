@@ -19,7 +19,7 @@ int main()
     InitializeDBTables();
 
     char ch;
-    //int num;
+    int num;
 
     init_apartment();    
 
@@ -43,6 +43,34 @@ int main()
 
     cin >> ch;
 
+    string accName;
+    int newIdNumber;
+    char sex;
+    string address;
+    long tax;
+
+    switch (ch)
+    {
+    case '1':
+
+        cout << "\t Enter account name: " << endl;
+        cin >> accName;
+        cout << "\t Enter sex (M/F): " << endl;
+        cin >> sex;
+        cout << "\t Enter address: " << endl;
+        cin >> address;
+        cout << "\t Enter tax id/social (full): " << endl;
+        cin >> tax;
+        Create_Account(accName, sex, address, tax);
+
+        break;
+    case '2':
+        system("cls");
+        break;
+    default:
+        break;
+    }
+
 }
 
 void InitializeDB() {
@@ -59,7 +87,18 @@ void InitializeDBTables() {
     }
 }
 
-void Create_Account() {
+void Create_Account(string accName, char sex, string address, long tax) {
+    char* err;
+    int id = (GetMaxAccountId() + 1);
+    int result = sqlite3_exec(_db, "INSERT INTO Bank_Account VALUES ()", NULL, NULL, &err);
+}
+
+int GetMaxAccountId()
+{
+    char* err;
+    int id;
+    int result = sqlite3_exec(_db, "SELECT MAX(id) FROM Bank_Account", NULL, NULL, &err);
+    return result;
 
 }
 
