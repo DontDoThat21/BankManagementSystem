@@ -2,6 +2,7 @@
 #include <iostream>
 #include <Windows.h>
 #include <string>
+#include "sqlite/sqlite3.h"
 
 using namespace std;
 using namespace winrt;
